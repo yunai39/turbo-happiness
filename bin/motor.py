@@ -4,7 +4,7 @@ class Motor:
     name = 'motor1'
     direction = True
     pwmFrequency = 100
-    pwmRapport = 50
+    pwmRapport = 30
     isStarted = False
 
     def __init__(self, name, gpioDirection, gpioDirection2, gpioPWM, pwmFrequency = 100):
