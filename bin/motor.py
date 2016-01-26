@@ -20,6 +20,8 @@ class Motor:
         GPIO.setup(self.gpioDirection, GPIO.OUT)
         GPIO.setup(self.gpioPWM, GPIO.OUT)
 	GPIO.output(self.gpioDirection, GPIO.LOW)
+	GPIO.setup(self.gpioDirection2, GPIO.OUT)
+	GPIO.output(self.gpioDirection, GPIO.HIGH)
 
     def getName(self):
         return self.name
@@ -56,10 +58,10 @@ class Motor:
             self.isStarted = False
             self.stop()
         self.direction = not self.direction
-        if(self.direction == True):
+        if(self.direction == False):
             GPIO.output(self.gpioDirection, GPIO.LOW)
             GPIO.output(self.gpioDirection2, GPIO.HIGH)
-        if(self.direction == True):
+        else:
             GPIO.output(self.gpioDirection, GPIO.HIGH)
             GPIO.output(self.gpioDirection2, GPIO.LOW)
         if(start):
