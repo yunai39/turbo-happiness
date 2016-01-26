@@ -19,7 +19,8 @@ class Motor:
     def initMotor(self):
         GPIO.setmode(GPIO.BOARD)
         GPIO.setup(self.gpioDirection, GPIO.OUT)
-        GPIO.setup(set.gpioPWM, GPIO.OUT)
+        GPIO.setup(self.gpioPWM, GPIO.OUT)
+	GPIO.output(self.gpioDirection, GPIO.LOW)
 
     def getName(self):
         return self.name
