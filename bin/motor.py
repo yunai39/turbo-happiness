@@ -3,16 +3,15 @@ import RPi.GPIO as GPIO
 class Motor:
     name = 'motor1'
     direction = True
-    gpioDirection = 0
-    gpioPWM = 0
     pwmFrequency = 100
     pwmRapport = 50
     isStarted = False
 
-    def __init__(self, name, gpioDirection, gpioPWM, pwmFrequency = 100):
+    def __init__(self, name, gpioDirection, gpioDirection2, gpioPWM, pwmFrequency = 100):
         self.name = name
         self.pwmFrequency = pwmFrequency
         self.gpioDirection = gpioDirection
+        self.gpioDirection2 = gpioDirection2
         self.gpioPWM = gpioPWM
         self.initMotor()
 
@@ -59,8 +58,10 @@ class Motor:
         self.direction = not self.direction
         if(self.direction == True):
             GPIO.output(self.gpioDirection, GPIO.LOW)
+            GPIO.output(self.gpioDirection2, GPIO.HIGH)
         if(self.direction == True):
             GPIO.output(self.gpioDirection, GPIO.HIGH)
+            GPIO.output(self.gpioDirection2, GPIO.LOW)
         if(start):
             self.start()
             self.isStarted = True
