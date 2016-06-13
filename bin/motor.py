@@ -14,6 +14,7 @@ class Motor:
         self.pwmFrequency = pwmFrequency
         self.gpioDirection = gpioDirection
         self.gpioPWM = gpioPWM
+        self.initMotor()
 
     def initMotor(self):
         GPIO.setmode(GPIO.BOARD)
