@@ -1,28 +1,19 @@
-from motor import Motor
+# from motor import Motor
+# from charriot import Chariot
 import time
+from getch import getch, pause
 
-m = Motor('moteur 1', 5, 3, 10)
-m.start()
-time.sleep(3)
-m.setPwmRapport(40)
-time.sleep(1)
-m.setPwmRapport(50)
-time.sleep(1)
-m.setPwmRapport(60)
-time.sleep(1)
-m.setPwmRapport(70)
-time.sleep(1)
-m.setPwmRapport(80)
-time.sleep(1)
-m.setPwmRapport(90)
-time.sleep(1)
-m.setPwmRapport(70)
-time.sleep(1)
-m.setPwmRapport(50)
-time.sleep(1)
-m.reverse(True)
-time.sleep(3)
-m.reverse(True)
-time.sleep(3)
-m.stop()
-m.clear()
+# m1 = Motor('moteur 1', 5, 3, 10)
+# m2 = Motor('moteur 1', 5, 3, 10)
+#
+# charriot = Chariot(m1,m2)
+
+"""
+    Controle principal
+"""
+
+
+while True:
+    z = getch()
+    print(ord(z))
+    time.sleep(1)
